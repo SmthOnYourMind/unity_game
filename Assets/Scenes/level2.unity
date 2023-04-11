@@ -1091,6 +1091,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 3873740464941746726, guid: eb3df9e39af7cf041bbc05d0db014d4a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eb3df9e39af7cf041bbc05d0db014d4a, type: 3}
 --- !u!1 &1135501649
@@ -1500,7 +1504,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f5082ef91a7d1e449db0b1121317df1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1555251421}
+  playerRB: {fileID: 0}
   speed: 5
   jump_force: 7
   ground_check: {fileID: 807610097}
@@ -1511,7 +1515,6 @@ MonoBehaviour:
     m_Bits: 64
   fall_detector: {fileID: 1289210936}
   playerAnimation: {fileID: 0}
-  gold: 0
 --- !u!212 &1555251423
 SpriteRenderer:
   m_ObjectHideFlags: 0

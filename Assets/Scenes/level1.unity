@@ -234,11 +234,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &50111875 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3873740464941746726, guid: eb3df9e39af7cf041bbc05d0db014d4a, type: 3}
-  m_PrefabInstance: {fileID: 3873740464961384357}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &299117120
 GameObject:
   m_ObjectHideFlags: 0
@@ -874,8 +869,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64ed850d14c043b438109467c9d062cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isPlayerNear: 0
-  Panel: {fileID: 50111875}
 --- !u!1 &839986030
 GameObject:
   m_ObjectHideFlags: 0
@@ -1849,7 +1842,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f5082ef91a7d1e449db0b1121317df1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1692677315}
+  playerRB: {fileID: 0}
   speed: 5
   jump_force: 6
   ground_check: {fileID: 1686934775}
@@ -1860,7 +1853,6 @@ MonoBehaviour:
     m_Bits: 64
   fall_detector: {fileID: 1710878891}
   playerAnimation: {fileID: 0}
-  gold: 0
 --- !u!212 &1692677313
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3968,6 +3960,14 @@ PrefabInstance:
     - target: {fileID: 3873740464434438183, guid: eb3df9e39af7cf041bbc05d0db014d4a, type: 3}
       propertyPath: m_Name
       value: Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 3873740464941746723, guid: eb3df9e39af7cf041bbc05d0db014d4a, type: 3}
+      propertyPath: m_CullTransparentMesh
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3873740464941746726, guid: eb3df9e39af7cf041bbc05d0db014d4a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eb3df9e39af7cf041bbc05d0db014d4a, type: 3}
