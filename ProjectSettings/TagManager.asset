@@ -9,6 +9,7 @@ TagManager:
   - Next level
   - Previous level
   - Chest
+  - Gate
   layers:
   - Default
   - TransparentFX
