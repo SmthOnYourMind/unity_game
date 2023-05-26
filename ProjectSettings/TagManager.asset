@@ -10,6 +10,7 @@ TagManager:
   - Previous level
   - Chest
   - Gate
+  - scroll
   layers:
   - Default
   - TransparentFX

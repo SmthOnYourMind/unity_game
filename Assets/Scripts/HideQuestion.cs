@@ -13,6 +13,24 @@ public class HideQuestion : MonoBehaviour
 
     public GameObject gate;
 
+    private string input;
+
+    static class Answers
+    {
+        public static class Level1
+        {
+            public static string question1_ans = "молотов";
+            public static string question2_ans = "власов";
+            public static string question3_ans = "гебельс";
+        }
+        public static class Level2
+        {
+            public static string question1_ans = "d";
+            public static string question2_ans = "e";
+            public static string question3_ans = "f";
+        }
+    }
+
     void Start()
     {
         
@@ -30,28 +48,74 @@ public class HideQuestion : MonoBehaviour
     {
         rightAnswers++;
 
-        if (question1.active == true)
-            question1.SetActive(false);
-        else if (question2.active == true)
-            question2.SetActive(false);
-        else if (question3.active == true)
-            question3.SetActive(false);
-
         Time.timeScale = 1;
     }
 
     public void WrongAnswer()
     {
-        
-
-        if (question1.active == true)
-            question1.SetActive(false);
-        else if (question2.active == true)
-            question2.SetActive(false);
-        else if (question3.active == true)
-            question3.SetActive(false);
-
         Time.timeScale = 1;
+    }
+
+    public void CheckAnswer(string str)
+    {
+        input = str.ToLower();
+        Debug.Log(input);
+
+        if (SceneManager.GetActiveScene().buildIndex == 1)
+        {
+            if (question1.active == true)
+            {
+                question1.SetActive(false);
+                if (input == Answers.Level1.question1_ans)
+                    RightAnswer();
+                else
+                    WrongAnswer();
+            }
+            if (question2.active == true)
+            {
+                question2.SetActive(false);
+                if (input == Answers.Level1.question2_ans)
+                    RightAnswer();
+                else
+                    WrongAnswer();
+            }
+            if (question3.active == true)
+            {
+                question3.SetActive(false);
+                if (input == Answers.Level1.question3_ans)
+                    RightAnswer();
+                else
+                    WrongAnswer();
+            }
+        }
+
+        if (SceneManager.GetActiveScene().buildIndex == 2)
+        {
+            if (question1.active == true)
+            {
+                question1.SetActive(false);
+                if (input == Answers.Level2.question1_ans)
+                    RightAnswer();
+                else
+                    WrongAnswer();
+            }
+            if (question2.active == true)
+            {
+                question2.SetActive(false);
+                if (input == Answers.Level2.question2_ans)
+                    RightAnswer();
+                else
+                    WrongAnswer();
+            }
+            if (question3.active == true)
+            {
+                question3.SetActive(false);
+                if (str == Answers.Level2.question3_ans)
+                    RightAnswer();
+                else
+                    WrongAnswer();
+            }
+        }
     }
 
     public void RestartLevel()
@@ -61,3 +125,5 @@ public class HideQuestion : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }
+
+

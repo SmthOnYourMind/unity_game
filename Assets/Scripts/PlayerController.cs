@@ -93,6 +93,7 @@ public class PlayerController : MonoBehaviour
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
             respawn_point = transform.position;
+            HideQuestion.rightAnswers = 0;
         }
         else if (collision.tag == "Previous level")
         {
@@ -117,6 +118,11 @@ public class PlayerController : MonoBehaviour
                 ShowQuestion(3);
                 Time.timeScale = 0;
             }
+        }
+        else if (collision.tag == "scroll")
+        {
+            collision.gameObject.SetActive(false);
+            //
         }
     }
 
