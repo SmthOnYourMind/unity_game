@@ -7,7 +7,6 @@ using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
-    
     public Rigidbody2D playerRB;
 
     public float speed = 0;
@@ -28,6 +27,10 @@ public class PlayerController : MonoBehaviour
     public GameObject question2;
     public GameObject question3;
 
+    public GameObject scroll1;
+    public GameObject scroll2;
+    public GameObject scroll3;
+
     public Text rightAnsCount;
 
     // Start is called before the first frame update
@@ -41,6 +44,10 @@ public class PlayerController : MonoBehaviour
         question1.SetActive(false);
         question2.SetActive(false);
         question3.SetActive(false);
+
+        scroll1.SetActive(false);
+        scroll2.SetActive(false);
+        scroll3.SetActive(false);
 
         rightAnsCount.text = "Правильных ответов: " + HideQuestion.rightAnswers;
     }
@@ -95,11 +102,6 @@ public class PlayerController : MonoBehaviour
             respawn_point = transform.position;
             HideQuestion.rightAnswers = 0;
         }
-        else if (collision.tag == "Previous level")
-        {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
-            respawn_point = transform.position;
-        }
         else if (collision.tag == "Chest")
         {
             collision.gameObject.SetActive(false);
@@ -122,7 +124,19 @@ public class PlayerController : MonoBehaviour
         else if (collision.tag == "scroll")
         {
             collision.gameObject.SetActive(false);
-            //
+            Time.timeScale = 0;
+            if (collision.gameObject.name == "Scroll1")
+            {
+                scroll1.SetActive(true);
+            }
+            else if (collision.gameObject.name == "Scroll2")
+            {
+                scroll2.SetActive(true);
+            }
+            else if (collision.gameObject.name == "Scroll3")
+            {
+                scroll3.SetActive(true);
+            }
         }
     }
 

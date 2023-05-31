@@ -9,6 +9,10 @@ public class HideQuestion : MonoBehaviour
     public GameObject question2;
     public GameObject question3;
 
+    public GameObject scroll1;
+    public GameObject scroll2;
+    public GameObject scroll3;
+
     public static int rightAnswers = 0;
 
     public GameObject gate;
@@ -33,7 +37,7 @@ public class HideQuestion : MonoBehaviour
 
     void Start()
     {
-        
+
     }
 
     void Update()
@@ -54,6 +58,18 @@ public class HideQuestion : MonoBehaviour
     public void WrongAnswer()
     {
         Time.timeScale = 1;
+    }
+
+    public void HideScroll()
+    {
+        Time.timeScale = 1;
+
+        if (scroll1.active == true)
+            scroll1.SetActive(false);
+        else if (scroll2.active == true)
+            scroll2.SetActive(false);
+        else if (scroll3.active == true)
+            scroll3.SetActive(false);
     }
 
     public void CheckAnswer(string str)
