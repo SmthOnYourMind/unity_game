@@ -17,6 +17,8 @@ public class HideQuestion : MonoBehaviour
 
     public GameObject gate;
 
+    public GameObject meme;
+
     private string input;
 
     static class Answers
@@ -132,6 +134,13 @@ public class HideQuestion : MonoBehaviour
                     WrongAnswer();
             }
         }
+    }
+
+    public void LoadNextLevel()
+    {
+        Time.timeScale = 1;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        PlayerController.respawn_point = transform.position;
     }
 
     public void RestartLevel()

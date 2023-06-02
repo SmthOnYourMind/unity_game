@@ -18,7 +18,7 @@ public class PlayerController : MonoBehaviour
     public bool is_on_ground = false;
     public LayerMask ground_layer;
 
-    private Vector3 respawn_point;
+    public static Vector3 respawn_point;
     public GameObject fall_detector;
 
     public Animator playerAnimation;
@@ -30,6 +30,8 @@ public class PlayerController : MonoBehaviour
     public GameObject scroll1;
     public GameObject scroll2;
     public GameObject scroll3;
+
+    public GameObject meme;
 
     public Text rightAnsCount;
 
@@ -48,6 +50,8 @@ public class PlayerController : MonoBehaviour
         scroll1.SetActive(false);
         scroll2.SetActive(false);
         scroll3.SetActive(false);
+
+        meme.SetActive(false);
 
         rightAnsCount.text = "Правильных ответов: " + HideQuestion.rightAnswers;
     }
@@ -98,8 +102,9 @@ public class PlayerController : MonoBehaviour
         }
         else if (collision.tag == "Next level")
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-            respawn_point = transform.position;
+            meme.SetActive(true);
+            Time.timeScale = 0;
+            
             HideQuestion.rightAnswers = 0;
         }
         else if (collision.tag == "Chest")
