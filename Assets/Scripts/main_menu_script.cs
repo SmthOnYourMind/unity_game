@@ -5,8 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class main_menu_script : MonoBehaviour
 {
-    public GameObject info;
-
     private void Start()
     {
         CloseTutorial();
@@ -19,12 +17,12 @@ public class main_menu_script : MonoBehaviour
 
     public void ShowTutorial()
     {
-        info.SetActive(true);
+        
     }
 
     public void CloseTutorial()
     {
-        info.SetActive(false);
+        
     }
 
     public void Exit_game()

@@ -53,16 +53,16 @@ public class HideQuestion : MonoBehaviour
 
         public static class Level4
         {
-            public static string question1_ans = "d";
-            public static string question2_ans = "e";
-            public static string question3_ans = "f";
+            public static string question1_ans = "домохоз€йки";
+            public static string question2_ans = "родз€нко";
+            public static string question3_ans = "2 марта";
         }
 
         public static class Level5
         {
-            public static string question1_ans = "d";
-            public static string question2_ans = "e";
-            public static string question3_ans = "f";
+            public static string question1_ans = "вином";
+            public static string question2_ans = "аврора";
+            public static string question3_ans = "26 окт€бр€";
         }
     }
 
@@ -160,6 +160,90 @@ public class HideQuestion : MonoBehaviour
             {
                 question3.SetActive(false);
                 if (str == Answers.Level2.question3_ans)
+                    RightAnswer();
+                else
+                    WrongAnswer();
+            }
+        }
+
+        if (SceneManager.GetActiveScene().buildIndex == 3)
+        {
+            if (question1.active == true)
+            {
+                question1.SetActive(false);
+                if (input == Answers.Level3.question1_ans)
+                    RightAnswer();
+                else
+                    WrongAnswer();
+            }
+            if (question2.active == true)
+            {
+                question2.SetActive(false);
+                if (input == Answers.Level3.question2_ans)
+                    RightAnswer();
+                else
+                    WrongAnswer();
+            }
+            if (question3.active == true)
+            {
+                question3.SetActive(false);
+                if (str == Answers.Level3.question3_ans)
+                    RightAnswer();
+                else
+                    WrongAnswer();
+            }
+        }
+
+        if (SceneManager.GetActiveScene().buildIndex == 4)
+        {
+            if (question1.active == true)
+            {
+                question1.SetActive(false);
+                if (input == Answers.Level4.question1_ans)
+                    RightAnswer();
+                else
+                    WrongAnswer();
+            }
+            if (question2.active == true)
+            {
+                question2.SetActive(false);
+                if (input == Answers.Level4.question2_ans)
+                    RightAnswer();
+                else
+                    WrongAnswer();
+            }
+            if (question3.active == true)
+            {
+                question3.SetActive(false);
+                if (str == Answers.Level4.question3_ans)
+                    RightAnswer();
+                else
+                    WrongAnswer();
+            }
+        }
+
+        if (SceneManager.GetActiveScene().buildIndex == 5)
+        {
+            if (question1.active == true)
+            {
+                question1.SetActive(false);
+                if (input == Answers.Level5.question1_ans)
+                    RightAnswer();
+                else
+                    WrongAnswer();
+            }
+            if (question2.active == true)
+            {
+                question2.SetActive(false);
+                if (input == Answers.Level5.question2_ans)
+                    RightAnswer();
+                else
+                    WrongAnswer();
+            }
+            if (question3.active == true)
+            {
+                question3.SetActive(false);
+                if (str == Answers.Level5.question3_ans)
                     RightAnswer();
                 else
                     WrongAnswer();
