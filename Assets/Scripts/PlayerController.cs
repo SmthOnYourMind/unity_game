@@ -31,8 +31,16 @@ public class PlayerController : MonoBehaviour
     public GameObject scroll2;
     public GameObject scroll3;
 
-    public GameObject meme;
+    public GameObject mem1;
+    public GameObject mem2;
+    public GameObject mem3;
 
+    public GameObject mem1info;
+    public GameObject mem2info;
+    public GameObject mem3info;
+
+
+    public GameObject restart_button;
     public Text rightAnsCount;
 
     // Start is called before the first frame update
@@ -51,7 +59,14 @@ public class PlayerController : MonoBehaviour
         scroll2.SetActive(false);
         scroll3.SetActive(false);
 
-        meme.SetActive(false);
+        mem1.SetActive(false);
+        mem2.SetActive(false);
+        mem3.SetActive(false);
+
+        mem1info.SetActive(false);
+        mem2info.SetActive(false);
+        mem3info.SetActive(false);
+
 
         rightAnsCount.text = "Правильных ответов: " + HideQuestion.rightAnswers;
     }
@@ -102,7 +117,7 @@ public class PlayerController : MonoBehaviour
         }
         else if (collision.tag == "Next level")
         {
-            meme.SetActive(true);
+            mem1.SetActive(true);
             Time.timeScale = 0;
             
             HideQuestion.rightAnswers = 0;
@@ -130,6 +145,8 @@ public class PlayerController : MonoBehaviour
         {
             collision.gameObject.SetActive(false);
             Time.timeScale = 0;
+            restart_button.SetActive(false);
+
             if (collision.gameObject.name == "Scroll1")
             {
                 scroll1.SetActive(true);

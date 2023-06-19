@@ -16,20 +16,49 @@ public class HideQuestion : MonoBehaviour
     public static int rightAnswers = 0;
 
     public GameObject gate;
+    public GameObject mem1;
+    public GameObject mem2;
+    public GameObject mem3;
 
-    public GameObject meme;
+    public GameObject mem1info;
+    public GameObject mem2info;
+    public GameObject mem3info;
+
 
     private string input;
+
+    public GameObject restart_button;
 
     static class Answers
     {
         public static class Level1
         {
-            public static string question1_ans = "молотов";
-            public static string question2_ans = "власов";
-            public static string question3_ans = "гебельс";
+            public static string question1_ans = "письмо";
+            public static string question2_ans = "порт-артур";
+            public static string question3_ans = "соя";
         }
         public static class Level2
+        {
+            public static string question1_ans = "кровавое воскресенье";
+            public static string question2_ans = "4";
+            public static string question3_ans = "манифест";
+        }
+
+        public static class Level3
+        {
+            public static string question1_ans = "4";
+            public static string question2_ans = "запугивания";
+            public static string question3_ans = "испанский грипп";
+        }
+
+        public static class Level4
+        {
+            public static string question1_ans = "d";
+            public static string question2_ans = "e";
+            public static string question3_ans = "f";
+        }
+
+        public static class Level5
         {
             public static string question1_ans = "d";
             public static string question2_ans = "e";
@@ -65,6 +94,8 @@ public class HideQuestion : MonoBehaviour
     public void HideScroll()
     {
         Time.timeScale = 1;
+
+        restart_button.SetActive(true);
 
         if (scroll1.active == true)
             scroll1.SetActive(false);
@@ -134,6 +165,55 @@ public class HideQuestion : MonoBehaviour
                     WrongAnswer();
             }
         }
+    }
+
+    public void ShowMemInfo()
+    {
+        if (mem1.active)
+        {
+            mem1.SetActive(false);
+            mem1info.SetActive(true);
+        }
+        else if (mem2.active)
+        {
+            mem2.SetActive(false);
+            mem2info.SetActive(true);
+        }
+        else if (mem3.active)
+        {
+            mem3.SetActive(false);
+            mem3info.SetActive(true);
+        }
+    }
+
+    public void HideMemInfo()
+    {
+        if (mem1info.active)
+        {
+            mem1info.SetActive(false);
+            mem1.SetActive(true);
+        }
+        else if (mem2info.active)
+        {
+            mem2info.SetActive(false);
+            mem2.SetActive(true);
+        }
+        else if (mem3info.active)
+        {
+            mem3info.SetActive(false);
+            mem3.SetActive(true);
+        }
+    }
+
+    public void LoadMem2()
+    {
+        mem1.SetActive(false);
+        mem2.SetActive(true);
+    }
+    public void LoadMem3()
+    {
+        mem2.SetActive(false);
+        mem3.SetActive(true);
     }
 
     public void LoadNextLevel()
